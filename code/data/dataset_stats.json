@@ -1,0 +1,38 @@
+{
+  "total_dialogues": 2000,
+  "total_turns": 10000,
+  "avg_turns_per_dialogue": 5.0,
+  "avg_switch_density_per_100_tokens": 10.29,
+  "topic_distribution": {
+    "daily_life": 178,
+    "technology": 150,
+    "health": 163,
+    "education": 168,
+    "culture": 144,
+    "sports": 126,
+    "politics": 102,
+    "family_relationships": 114,
+    "mental_health": 140,
+    "entertainment": 121,
+    "travel": 103,
+    "environment": 118,
+    "food_nutrition": 116,
+    "finance": 125,
+    "science": 132
+  },
+  "cs_frequency_distribution": {
+    "high": 672,
+    "medium": 661,
+    "low": 667
+  },
+  "language_dominance_distribution": {
+    "balanced": 656,
+    "english_dominant": 669,
+    "amharic_dominant": 675
+  },
+  "mean_coherence_score": 4.159,
+  "mean_semantic_consistency": 0.836,
+  "mean_fluency_rating": 3.951,
+  "mean_switch_point_naturalness": 4.013,
+  "mean_iaa_kappa": 0.724
+}

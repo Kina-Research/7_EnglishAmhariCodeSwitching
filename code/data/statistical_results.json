@@ -1,0 +1,247 @@
+{
+  "hypotheses": [
+    {
+      "hypothesis": "H1 (GPT-4 vs. LLaMA-2-7B)",
+      "statistical_test": "Welch's t-test",
+      "metric": "Dialogue Coherence (1-5)",
+      "statistic": 142.9391,
+      "df": 3424.3,
+      "p_value": 0.0,
+      "effect_size": 4.5201,
+      "ci_95": [
+        1.9647,
+        2.0193
+      ],
+      "mean_diff": 1.992,
+      "verdict": "Supported",
+      "interpretation": "GPT-4 achieved significantly higher dialogue coherence than LLaMA-2-7B."
+    },
+    {
+      "hypothesis": "H1 (GPT-4 vs. BLOOM-7B)",
+      "statistical_test": "Welch's t-test",
+      "metric": "Dialogue Coherence (1-5)",
+      "statistic": 162.8392,
+      "df": 3990.6,
+      "p_value": 0.0,
+      "effect_size": 5.1494,
+      "ci_95": [
+        1.7615,
+        1.8045
+      ],
+      "mean_diff": 1.783,
+      "verdict": "Supported",
+      "interpretation": "GPT-4 achieved significantly higher dialogue coherence than BLOOM-7B."
+    },
+    {
+      "hypothesis": "H2 (CS Frequency vs. Semantic Consistency)",
+      "statistical_test": "Spearman Rank Correlation",
+      "metric": "Semantic Consistency vs. CS Frequency Tier",
+      "statistic": -0.8319,
+      "df": 1998,
+      "p_value": 0.0,
+      "effect_size": -0.8319,
+      "ci_95": [
+        -0.8449,
+        -0.8179
+      ],
+      "verdict": "Supported",
+      "interpretation": "A statistically significant negative correlation was observed between code-switching frequency and semantic consistency."
+    },
+    {
+      "hypothesis": "H3 (Multilingual vs. Zero-Shot Switch F1)",
+      "statistical_test": "Welch's t-test",
+      "metric": "Switch-Point Tagging F1",
+      "statistic": 140.658,
+      "df": 5999.0,
+      "p_value": 0.0,
+      "effect_size": 2.3443,
+      "ci_95": [
+        0.7566,
+        0.778
+      ],
+      "mean_diff": 0.7673,
+      "verdict": "Supported",
+      "interpretation": "Multilingual models achieved significantly higher Switch F1 scores than monolingual or cross-lingual models."
+    },
+    {
+      "hypothesis": "H4 (English vs. Amharic-Dominant Fluency)",
+      "statistical_test": "Paired t-test",
+      "metric": "Conversational Fluency (1-5)",
+      "statistic": 0.4437,
+      "df": 3344,
+      "p_value": 0.6573099648168383,
+      "effect_size": 0.0077,
+      "ci_95": [
+        -0.0169,
+        0.0267
+      ],
+      "mean_diff": 0.0049,
+      "verdict": "Rejected",
+      "interpretation": "No statistically significant difference was observed between English-dominant and Amharic-dominant contexts in fluency performance."
+    }
+  ],
+  "directional_switch_accuracy": {
+    "GPT-4": {
+      "eng_to_amh": {
+        "n": 490,
+        "mean": 0.7531,
+        "std": 0.4312
+      },
+      "amh_to_eng": {
+        "n": 454,
+        "mean": 0.5771,
+        "std": 0.494
+      }
+    },
+    "LLaMA-2-7B": {
+      "eng_to_amh": {
+        "n": 490,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "amh_to_eng": {
+        "n": 454,
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "BLOOM-7B": {
+      "eng_to_amh": {
+        "n": 490,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "amh_to_eng": {
+        "n": 454,
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "mT5-Large": {
+      "eng_to_amh": {
+        "n": 490,
+        "mean": 0.7551,
+        "std": 0.43
+      },
+      "amh_to_eng": {
+        "n": 454,
+        "mean": 0.5419,
+        "std": 0.4982
+      }
+    },
+    "mBERT-fine-tuned": {
+      "eng_to_amh": {
+        "n": 490,
+        "mean": 0.7551,
+        "std": 0.43
+      },
+      "amh_to_eng": {
+        "n": 454,
+        "mean": 0.5617,
+        "std": 0.4962
+      }
+    }
+  },
+  "cs_frequency_tier_breakdown": {
+    "GPT-4": {
+      "low": {
+        "bert_f1_mean": 0.8119,
+        "bert_f1_std": 0.1332,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "medium": {
+        "bert_f1_mean": 0.7992,
+        "bert_f1_std": 0.1399,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "high": {
+        "bert_f1_mean": 0.7877,
+        "bert_f1_std": 0.1369,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      }
+    },
+    "LLaMA-2-7B": {
+      "low": {
+        "bert_f1_mean": 0.5795,
+        "bert_f1_std": 0.1326,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "medium": {
+        "bert_f1_mean": 0.5679,
+        "bert_f1_std": 0.1396,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "high": {
+        "bert_f1_mean": 0.5198,
+        "bert_f1_std": 0.1283,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      }
+    },
+    "BLOOM-7B": {
+      "low": {
+        "bert_f1_mean": 0.4614,
+        "bert_f1_std": 0.1182,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "medium": {
+        "bert_f1_mean": 0.4528,
+        "bert_f1_std": 0.1159,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "high": {
+        "bert_f1_mean": 0.4237,
+        "bert_f1_std": 0.11,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      }
+    },
+    "mT5-Large": {
+      "low": {
+        "bert_f1_mean": 0.6911,
+        "bert_f1_std": 0.1405,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "medium": {
+        "bert_f1_mean": 0.6789,
+        "bert_f1_std": 0.1475,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "high": {
+        "bert_f1_mean": 0.677,
+        "bert_f1_std": 0.1355,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      }
+    },
+    "mBERT-fine-tuned": {
+      "low": {
+        "bert_f1_mean": 0.7516,
+        "bert_f1_std": 0.133,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "medium": {
+        "bert_f1_mean": 0.745,
+        "bert_f1_std": 0.1461,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      },
+      "high": {
+        "bert_f1_mean": 0.7355,
+        "bert_f1_std": 0.1342,
+        "coherence_mean": 0.0,
+        "coherence_std": 0.0
+      }
+    }
+  }
+}

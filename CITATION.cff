@@ -1,0 +1,83 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code in your research, please cite it using this metadata."
+type: dataset
+title: "EthioSwitch-Bench: A Benchmark for LLM Evaluation on English-Amharic Code-Switching"
+abstract: >
+  EthioSwitch-Bench is the first large-scale, human-validated benchmark for evaluating
+  Large Language Model performance on English-Amharic code-switching in multi-turn
+  conversational dialogue. The benchmark provides two tiers: a gold-standard set of
+  30 hand-crafted dialogues (v2.0) and a full benchmark corpus of 2,000 dialogues (v3.0)
+  spanning 15 topics with controlled code-switch frequency and language dominance.
+  All dialogues include human annotations for coherence, semantic consistency,
+  switch-point naturalness, fluency, and inter-annotator agreement (Cohen's kappa).
+authors:
+  - family-names: Tsega
+    given-names: Kindie Alebachew
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Faculty of Computing and Software Engineering, Arba Minch Institute of Technology, Arba Minch University, Arba Minch, Ethiopia"
+  - family-names: Sharma
+    given-names: Durga Prasad
+    affiliation: "Faculty of Computing and Software Engineering, Arba Minch Institute of Technology, Arba Minch University, Arba Minch, Ethiopia"
+  - family-names: Gondere
+    given-names: Mesay Samuel
+    affiliation: "Faculty of Computing and Software Engineering, Arba Minch Institute of Technology, Arba Minch University, Arba Minch, Ethiopia"
+  - family-names: Yimer
+    given-names: Mohammed Abebe
+    affiliation: "Faculty of Computing and Software Engineering, Arba Minch Institute of Technology, Arba Minch University, Arba Minch, Ethiopia"
+date-released: "2026-06-01"
+version: "3.0"
+license: CC-BY-4.0
+keywords:
+  - code-switching
+  - Amharic
+  - English
+  - multilingual NLP
+  - large language models
+  - benchmarking
+  - dialogue systems
+  - Ethiopian languages
+  - conversational intelligence
+  - low-resource NLP
+references:
+  - type: article
+    authors:
+      - family-names: Tsega
+        given-names: Kindie Alebachew
+      - family-names: Sharma
+        given-names: Durga Prasad
+      - family-names: Gondere
+        given-names: Mesay Samuel
+      - family-names: Yimer
+        given-names: Mohammed Abebe
+    title: "Evaluating Conversational Intelligence in Large Language Models Using English-Amharic Code-Switching"
+    journal: "Computational Intelligence"
+    year: 2026
+    notes: "Under review"
+  - type: dataset
+    authors:
+      - family-names: Li
+        given-names: Jiwei
+    title: "DailyDialog: A Manually Labelled Multi-turn Dialogue Dataset"
+    year: 2017
+    url: "https://arxiv.org/abs/1710.03957"
+  - type: dataset
+    authors:
+      - family-names: Zhang
+        given-names: Saizheng
+    title: "Personalizing Dialogue Agents: I have a dog, do you have pets too?"
+    year: 2018
+    url: "https://arxiv.org/abs/1801.07243"
+  - type: dataset
+    authors:
+      - family-names: Rashkin
+        given-names: Hannah
+    title: "Towards Empathetic Open-domain Conversation Models: A New Benchmark and Dataset"
+    year: 2019
+    url: "https://arxiv.org/abs/1811.00207"
+  - type: dataset
+    authors:
+      - family-names: Smith
+        given-names: Eric Michael
+    title: "Can You Put it All Together: Evaluating Conversational Agents' Ability to Blend Skills"
+    year: 2020
+    url: "https://arxiv.org/abs/2004.08449"

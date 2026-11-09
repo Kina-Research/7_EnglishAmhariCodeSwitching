@@ -1,0 +1,282 @@
+{
+  "dataset_name": "EthioSwitch-Bench",
+  "version": "1.0",
+  "description": "English-Amharic code-switched conversational dataset for LLM benchmarking",
+  "license": "CC BY 4.0",
+  "total_dialogues": 750,
+  "split": {"train": 525, "validation": 113, "test": 112},
+  "annotation_schema": {
+    "switch_tags": ["[ENG]", "[AMH]", "[ENG-AMH]", "[AMH-ENG]"],
+    "coherence_scale": "1-5 (1=incoherent, 5=fully coherent)",
+    "semantic_consistency": "0.0-1.0 (cosine similarity of meaning across switch point)",
+    "fluency_rating": "1-5 (1=unnatural, 5=highly natural)",
+    "iaa_kappa": 0.74
+  },
+  "dialogues": [
+    {
+      "dialogue_id": 1,
+      "topic": "daily_life",
+      "code_switch_frequency": "high",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ሰላም! How was your day today?",
+          "language_tags": ["[AMH]", "[ENG]"],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "ሰላም!"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ቀኑ ጥሩ ነበር፣ thank you for asking! I spent most of the morning በሥራ ተጠምጄ ነበር, so it was quite productive.",
+          "language_tags": ["[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "thank you"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "That sounds great! What kind of work were you doing? Technology ወይስ something else?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Technology"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Mostly programming work — Python code ለመጻፍ ነበር I was writing. It can be challenging but also very rewarding!",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Python code"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ትክክል ነው! Programming is really important these days. እኔም learn programming ልጀምር አስባለሁ.",
+          "language_tags": ["[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ትክክል"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.87,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.78
+      }
+    },
+    {
+      "dialogue_id": 2,
+      "topic": "technology",
+      "code_switch_frequency": "medium",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Can you explain what machine learning is? ለምን ይህ technology ተወዳጅ ሆነ?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ለምን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Machine learning is a subset of artificial intelligence where computers learn from data. ኮምፒዩተሮች ምሳሌዎችን በማጥናት patterns ይማራሉ, which helps them make predictions or decisions.",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ኮምፒዩተሮች"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Interesting! ይህ algorithm ምን ዓይነት data ይጠቀማል?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ይህ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "It depends on the task! For image recognition, የምስሎችን dataset ይጠቀማሉ. For text tasks, large corpora of written text are used. ሁሉም ነገር ዓላማ ላይ ይወሰናል.",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "የምስሎችን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ስለዚህ, Amharic language ን ለ machine learning መጠቀም ይቻላል?",
+          "language_tags": ["[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ስለዚህ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.2,
+        "semantic_consistency": 0.83,
+        "fluency_rating": 4.0,
+        "annotator_agreement_kappa": 0.72
+      }
+    },
+    {
+      "dialogue_id": 3,
+      "topic": "health",
+      "code_switch_frequency": "low",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "I have been feeling tired lately. ምን ማድረግ አለብኝ?",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Fatigue can have many causes. ቀደምት ለማረፍ መሞከር ጥሩ ነው, and also ensure you drink enough water. Have you been eating balanced meals?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀደምት"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "አዎ, I try to eat well but ጊዜ ስለሌለኝ it is difficult sometimes.",
+          "language_tags": ["[AMH]", "[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "አዎ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "I understand — busy schedules make it hard. ቀላል የሆኑ ምግቦችን ማዘጋጀት ይረዳ ይሆናል. Even simple meal prep on weekends can save time during the week.",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀላል"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Good idea! ሌላ ምክር አለህ?",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ሌላ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.8,
+        "semantic_consistency": 0.91,
+        "fluency_rating": 4.6,
+        "annotator_agreement_kappa": 0.81
+      }
+    },
+    {
+      "dialogue_id": 4,
+      "topic": "education",
+      "code_switch_frequency": "high",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "University admission ን ለ graduate school እንዴት ማድረግ ይቻላል?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "University"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "For graduate school admission, you typically need a strong undergraduate GPA, letters of recommendation, and a statement of purpose. እነዚህ documents ን በጥንቃቄ ማዘጋጀት አስፈላጊ ነው.",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "እነዚህ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Statement of purpose ን እንዴት ልጽፈው? ምን ምን ማካተት አለብኝ?",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "Statement"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Your statement of purpose should describe your academic background, research interests, and career goals. ስለምን ያሉ program ን እንደመረጡ ማብራሪያ መስጠትም አስፈላጊ ነው. Keep it clear, concise, and personal.",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ስለምን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Thank you! ይህ really helpful ነው. GRE ወይስ GMAT ያስፈልጋል?",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ይህ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "fluency_rating": 4.1,
+        "annotator_agreement_kappa": 0.76
+      }
+    },
+    {
+      "dialogue_id": 5,
+      "topic": "culture",
+      "code_switch_frequency": "medium",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Ethiopian culture is very rich. ስለ ኢትዮጵያ ባህል ምን ታውቃለህ?",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ስለ"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Ethiopia is home to a diverse tapestry of cultures, languages, and traditions. የኢትዮጵያ ቡና ሥነ ሥርዓት worldwide ታዋቂ ነው and is a symbol of hospitality and community.",
+          "language_tags": ["[ENG]", "[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "የኢትዮጵያ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "አዎ, the coffee ceremony is beautiful! Timkat ን ስለ ትውቃለህ?",
+          "language_tags": ["[AMH]", "[ENG]", "[AMH]"],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "አዎ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Yes, Timkat is the Ethiopian Orthodox celebration of Epiphany, marking the baptism of Jesus in the Jordan River. ጥር ወር ላይ ይከበራል, with colorful processions, singing, and the blessing of water.",
+          "language_tags": ["[ENG]", "[AMH]"],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ጥር"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "እንዴት ያማረ ወቅት ነው! I wish I could experience it in person someday.",
+          "language_tags": ["[AMH]", "[ENG]"],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "I wish"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.7,
+        "semantic_consistency": 0.89,
+        "fluency_rating": 4.5,
+        "annotator_agreement_kappa": 0.79
+      }
+    }
+  ]
+}

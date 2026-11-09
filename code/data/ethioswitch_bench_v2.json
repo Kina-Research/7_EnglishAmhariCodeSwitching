@@ -1,0 +1,2441 @@
+{
+  "dataset_name": "EthioSwitch-Bench",
+  "version": "2.0",
+  "description": "English-Amharic code-switched conversational dataset for LLM benchmarking. 30 multi-turn dialogues covering 7 topics with controlled code-switch frequency and language dominance. Human-validated annotations for coherence, semantic consistency, switch-point naturalness, and fluency.",
+  "license": "CC BY 4.0",
+  "citation": " ",
+  "total_dialogues": 30,
+  "split": {
+    "train": 21,
+    "validation": 4,
+    "test": 5
+  },
+  "annotation_schema": {
+    "switch_tags": [
+      "[ENG]",
+      "[AMH]",
+      "[ENG-AMH]",
+      "[AMH-ENG]",
+      "[ENG-AMH-ENG]",
+      "[AMH-ENG-AMH]"
+    ],
+    "coherence_scale": "1-5 (1=incoherent, 5=fully coherent)",
+    "semantic_consistency": "0.0-1.0 (cosine similarity of meaning across switch point)",
+    "switch_point_naturalness": "1-5 (1=unnatural, 5=perfectly natural)",
+    "fluency_rating": "1-5 (1=unnatural, 5=highly natural)",
+    "language_dominance": "english_dominant | amharic_dominant | balanced",
+    "iaa_kappa_overall": 0.74
+  },
+  "dialogues": [
+    {
+      "dialogue_id": 1,
+      "topic": "daily_life",
+      "code_switch_frequency": "high",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ሰላም! How was your day today?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "ሰላም!"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ቀኑ ጥሩ ነበር፣ thank you for asking! I spent most of the morning በሥራ ተጠምጄ ነበር, so it was quite productive.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "thank you"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "That sounds great! What kind of work were you doing? Technology ወይስ something else?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Technology"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Mostly programming work — Python code ለመጻፍ ነበር I was writing. It can be challenging but also very rewarding!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Python code"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ትክክል ነው! Programming is really important these days. እኔም learn programming ልጀምር አስባለሁ.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ትክክል"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.87,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.78
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 2,
+      "topic": "technology",
+      "code_switch_frequency": "medium",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Can you explain what machine learning is? ለምን ይህ technology ተወዳጅ ሆነ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ለምን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Machine learning is a subset of artificial intelligence where computers learn from data. ኮምፒዩተሮች ምሳሌዎችን በማጥናት patterns ይማራሉ, which helps them make predictions or decisions.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ኮምፒዩተሮች"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Interesting! ይህ algorithm ምን ዓይነት data ይጠቀማል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ይህ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "It depends on the task! For image recognition, የምስሎችን dataset ይጠቀማሉ. For text tasks, large corpora of written text are used. ሁሉም ነገር ዓላማ ላይ ይወሰናል.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "የምስሎችን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ስለዚህ, Amharic language ን ለ machine learning መጠቀም ይቻላል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "ስለዚህ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.2,
+        "semantic_consistency": 0.83,
+        "switch_point_naturalness": 4.1,
+        "fluency_rating": 4.0,
+        "annotator_agreement_kappa": 0.72
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 3,
+      "topic": "health",
+      "code_switch_frequency": "low",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "I have been feeling tired lately. ምን ማድረግ አለብኝ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Fatigue can have many causes. ቀደምት ለማረፍ መሞከር ጥሩ ነው, and also ensure you drink enough water. Have you been eating balanced meals?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀደምት"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "አዎ, I try to eat well but ጊዜ ስለሌለኝ it is difficult sometimes.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "አዎ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "I understand — busy schedules make it hard. ቀላል የሆኑ ምግቦችን ማዘጋጀት ይረዳ ይሆናል. Even simple meal prep on weekends can save time during the week.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀላል"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Good idea! ሌላ ምክር አለህ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ሌላ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.8,
+        "semantic_consistency": 0.91,
+        "switch_point_naturalness": 4.7,
+        "fluency_rating": 4.6,
+        "annotator_agreement_kappa": 0.81
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 4,
+      "topic": "education",
+      "code_switch_frequency": "high",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "University admission ን ለ graduate school እንዴት ማድረግ ይቻላል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "University"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "For graduate school admission, you typically need a strong undergraduate GPA, letters of recommendation, and a statement of purpose. እነዚህ documents ን በጥንቃቄ ማዘጋጀት አስፈላጊ ነው.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "እነዚህ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Statement of purpose ን እንዴት ልጽፈው? ምን ምን ማካተት አለብኝ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "Statement"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Your statement of purpose should describe your academic background, research interests, and career goals. ስለምን ያሉ program ን እንደመረጡ ማብራሪያ መስጠትም አስፈላጊ ነው. Keep it clear, concise, and personal.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ስለምን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Thank you! ይህ really helpful ነው. GRE ወይስ GMAT ያስፈልጋል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ይህ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "switch_point_naturalness": 4.2,
+        "fluency_rating": 4.1,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 5,
+      "topic": "culture",
+      "code_switch_frequency": "medium",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Ethiopian culture is very rich. ስለ ኢትዮጵያ ባህል ምን ታውቃለህ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ስለ"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Ethiopia is home to a diverse tapestry of cultures, languages, and traditions. የኢትዮጵያ ቡና ሥነ ሥርዓት worldwide ታዋቂ ነው and is a symbol of hospitality and community.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "የኢትዮጵያ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "አዎ, the coffee ceremony is beautiful! Timkat ን ስለ ትውቃለህ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "አዎ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Yes, Timkat is the Ethiopian Orthodox celebration of Epiphany, marking the baptism of Jesus in the Jordan River. ጥር ወር ላይ ይከበራል, with colorful processions, singing, and the blessing of water.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ጥር"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "እንዴት ያማረ ወቅት ነው! I wish I could experience it in person someday.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "I wish"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.7,
+        "semantic_consistency": 0.89,
+        "switch_point_naturalness": 4.6,
+        "fluency_rating": 4.5,
+        "annotator_agreement_kappa": 0.79
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 6,
+      "topic": "technology",
+      "code_switch_frequency": "high",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Smartphone ን ስጠቀም battery ፈጥኖ ያልቃል። ምን ማድረግ እችላለሁ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Smartphone"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ብዙ ምክንያቶች battery ን ሊያሟጡ ይችላሉ። Screen brightness ን ዝቅ ያድርጉ እና background apps ን ዝጉ። Also, turning off Bluetooth and Wi-Fi when not in use helps significantly.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "Screen brightness"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Background apps ን እንዴት ዝጋቸዋለሁ? Settings ውስጥ ይገኛሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Background apps"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! Settings ን ከፍቱ፣ ከዚያ 'Battery' ወይም 'Apps' ን ይምረጡ። There you can see which apps consume the most power. ከፍተኛ ኃይል የሚፈጁ apps ን ይዝጉ።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Settings"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጥሩ ምክር ነው! Dark mode ም battery ን ይረዳል ተብሏል። ይህ እውነት ነው?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Dark mode"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.86,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.77
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 7,
+      "topic": "health",
+      "code_switch_frequency": "medium",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ዛሬ ራስ ምታቴ ብዙ ነው። Painkiller ልወስድ ይገባኛል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Painkiller"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Before taking medication, ውሃ ብዙ ጠጡ እና ለጥቂት ደቂቃዎች ያርፉ። Headaches often improve with rest and hydration. ህመሙ ካልቀለለ, then consulting a doctor is recommended.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ውሃ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ምን ዓይነት ውሃ? Cold ወይስ warm water ይሻላል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Cold"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Room temperature water is generally best. ቀዝቃዛ ውሃ ሲጠጡ ለአንዳንዶች ጭንቅላት ምታ ሊጨምር ይችላል። Staying well-hydrated throughout the day prevents many types of headaches.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀዝቃዛ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "አሁን ትንሽ ተሻለኝ። Thank you for the advice!",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "Thank you"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.88,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.75
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 8,
+      "topic": "education",
+      "code_switch_frequency": "low",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "What are the best strategies for studying for exams? ምክር ይሰጡኝ።",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምክር"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Effective study strategies include spaced repetition, active recall, and practice testing. ምን ዓይነት ትምህርት እያጠናህ ነው? The best approach can vary by subject.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ምን"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Mathematics and physics. በተለይ calculus ከባድ ሆኖብኛል።",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "calculus"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Calculus requires consistent practice. ጥያቄዎችን በተደጋጋሚ መፍታት ይረዳል። Try solving problems step by step, and use resources like Khan Academy for visual explanations.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ጥያቄዎችን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Online resources ጥሩ ናቸው? ምን site ይጠቀሙ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ጥሩ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.3,
+        "semantic_consistency": 0.82,
+        "switch_point_naturalness": 4.0,
+        "fluency_rating": 3.9,
+        "annotator_agreement_kappa": 0.73
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 9,
+      "topic": "sports",
+      "code_switch_frequency": "high",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Ethiopia's runners are amazing! ትናንት race ታይቷችሁ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ትናንት"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "አዎ! ኢትዮጵያ ለ marathon running world-renowned ናት። Athletes like Eliud Kipchoge from Kenya and Ethiopia's Tigist Assefa continue to break world records. ኩራት ይሰማናል!",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "marathon running"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Running training ን እንዴት ይጀምራሉ? beginner ለሆነ ሰው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Running training"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Start with short distances and gradually increase. ሳምንት ሦስት ጊዜ ትንሽ ሩጥ እና ቀስ በቀስ ርቀቱን ጨምሩ። A good beginner plan is running 20-30 minutes three times per week. ሰውነታችሁን ያዳምጡ!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ሳምንት"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጫማ choice አስፈላጊ ነው? Running shoes expensive ናቸው።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Running shoes"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.84,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.2,
+        "annotator_agreement_kappa": 0.74
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 10,
+      "topic": "politics",
+      "code_switch_frequency": "low",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ዲሞክራሲ ምን ማለት ነው? Democracy ን ትርጉሙን ያብራሩልኝ።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Democracy"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ዲሞክራሲ ሕዝቡ ስልጣን ያለው የመንግሥት ሥርዓት ነው። In democratic systems, citizens elect their representatives through free and fair elections. ምርጫ የዴሞክራሲ ዋና መሠረት ነው።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "In democratic"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ኢትዮጵያ ዴሞክራሲ አለ ብለን መናገር እንችላለን? What is your view?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG]",
+          "switch_point_token": "What is"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "ኢትዮጵያ ዴሞክራሲያዊ ተቋሞቿን እያጠናከረች ነው። There are ongoing challenges, but also significant progress in recent years. ሰላማዊ ምርጫ እና ሕዝባዊ ተሳትፎ ወሳኝ ናቸው።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "There are"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ይህ አስደሳች ዕይታ ነው። Youth participation in politics ምን ሚና ይጫወታል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Youth participation"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.1,
+        "semantic_consistency": 0.8,
+        "switch_point_naturalness": 4.0,
+        "fluency_rating": 3.8,
+        "annotator_agreement_kappa": 0.7
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 11,
+      "topic": "daily_life",
+      "code_switch_frequency": "medium",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "What is the best way to manage time effectively?",
+          "language_tags": [
+            "[ENG]"
+          ],
+          "switch_type": "[ENG]",
+          "switch_point_token": ""
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Time management starts with clear priorities. ምን ሥራዎቻቸው ቅድሚያ ሊሰጣቸው እንደሚገባ ይወስኑ። Using a simple to-do list or the Eisenhower Matrix can be very effective.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ምን"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ምን ዓይነት apps ይጠቀሙ for planning? Amharic interface ያላቸው አሉ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "apps"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Popular apps include Todoist, Notion, and Google Calendar. In Amharic, some phones support Ethiopic keyboard and display. የስልኩን ቋንቋ ቅንብር ወደ አማርኛ ቀይሩ and see if your preferred app supports it.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "የስልኩን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Great tip! ነገ ይሞክረዋለሁ. Thanks again!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ነገ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.3,
+        "semantic_consistency": 0.84,
+        "switch_point_naturalness": 4.1,
+        "fluency_rating": 4.0,
+        "annotator_agreement_kappa": 0.74
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 12,
+      "topic": "culture",
+      "code_switch_frequency": "high",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "የኢትዮጵያ አዲስ ዓመት ምን ጊዜ ነው? Ethiopian New Year ን ሲያከብሩ ምን ምን ያደርጋሉ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Ethiopian New Year"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Ethiopian New Year, called Enkutatash, falls on September 11 (or 12 in leap years). ቤቶች ይዋቡ፣ ልዩ ምግቦች ይዘጋጃሉ፣ ዘፈንና ዳንስ ይኖራል። Children go house to house singing songs and receiving gifts. ለቤተሰብ ወሳኝ ጊዜ ነው!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ቤቶች"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ትምህርት ቤት ልጆች special dress ይለብሳሉ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "special dress"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! ብዙ ልጆች traditional Ethiopian clothing ይለብሳሉ — like the white cotton habesha kemis or netela. ቀለም ያለው ዳንስ ያደርጋሉ and sing traditional songs called hulilita to welcome the new year.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "traditional Ethiopian"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ውብ ባህል ነው! I would love to celebrate it one day. Addis Ababa ውስጥ ምርጥ ቦታ የት ነው?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "I would love"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.88,
+        "switch_point_naturalness": 4.5,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.78
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 13,
+      "topic": "technology",
+      "code_switch_frequency": "low",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "How does GPS navigation work? ቴክኖሎጂው ምን ያህል ትክክለኛ ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ቴክኖሎጂው"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "GPS works by receiving signals from a network of satellites orbiting the Earth. ከ24 በላይ satellites ሁልጊዜ ምድርን ይዞሩ. The system calculates your position by measuring signal travel time from at least 4 satellites.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ከ24"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Accuracy ን ምን ሊጎዳ ይችላል? Buildings ይጠቁማሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Accuracy"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Yes, tall buildings and dense urban environments can cause signal reflections that reduce accuracy. ይህ 'urban canyon effect' ይባላል። Modern GPS chips use multiple frequencies to mitigate this problem.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ይህ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Interesting! ኢትዮጵያ ሳተላይት አላት?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ኢትዮጵያ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.2,
+        "semantic_consistency": 0.83,
+        "switch_point_naturalness": 4.0,
+        "fluency_rating": 3.9,
+        "annotator_agreement_kappa": 0.72
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 14,
+      "topic": "daily_life",
+      "code_switch_frequency": "high",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ዛሬ ገበያ ለመሄድ እፈልጋለሁ። Shopping list ን እንዴት ደንቤ ላቅርበው?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Shopping list"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ጥሩ shopping list ለማዘጋጀት ምግቦቹን ወደ categories ከፋፍሉ — vegetables, proteins, grains, and snacks. ዝርዝሩን ቅደም ተከተል ባለው ሁኔታ ያዘጋጁ እና budget ን ያስታውሱ!",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "categories"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Budget ን እንዴት ልቆጣጠር? Prices ብዙ ጊዜ ይቀያየራሉ።",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Prices"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "ዋጋዎች ሲቀያየሩ adaptive budgeting ይጠቀሙ። Set a maximum total budget and prioritize essentials first. ቅድሚያ ለሚሰጧቸው ምርቶች ዋጋ ምን ያህል ሊሆን እንደሚችል ግምት ያቅዱ።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "adaptive budgeting"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጥሩ ምክር! Mobile app ን ለ budget tracking ይጠቀሙ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Mobile app"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "switch_point_naturalness": 4.2,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 15,
+      "topic": "health",
+      "code_switch_frequency": "high",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Exercise ምን ዓይነቶች ሰውነታቸውን ቅርጽ ለመስጠት ይረዳሉ? Cardio ወይስ weights?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Exercise"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Both are important for different reasons! Cardio exercises like running improve heart health and burn calories. Weight training ደግሞ ጡንቻን ያጠናክርና metabolism ን ያሳድጋል። ሁለቱን አጣምሮ መጠቀም ምርጡ ነው!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Weight training"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Beginner ለሆነ ሰው ሳምንት ስንት ጊዜ workout ማድረግ ይጠቅማል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "workout"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "ለጀማሪ ሳምንት ሦስት ቀን ይጀምሩ። Start with 30-minute sessions — 20 minutes of cardio and 10 minutes of light strength training. ከዚያ ቀስ ብለው ጊዜውን እና ክብደቱን ይጨምሩ።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Start with"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Rest days አስፈላጊ ናቸው? ወይስ ሁልጊዜ ልሰራ ይቻላል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "አስፈላጊ"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.7,
+        "semantic_consistency": 0.9,
+        "switch_point_naturalness": 4.5,
+        "fluency_rating": 4.5,
+        "annotator_agreement_kappa": 0.8
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 16,
+      "topic": "education",
+      "code_switch_frequency": "medium",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "በአዲስ አበባ ዩኒቨርሲቲ ምን ምን departments አሉ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "departments"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Addis Ababa University has colleges covering medicine, law, social sciences, engineering, natural sciences, and humanities. ብዙ postgraduate programs ም ይሰጣሉ። It is one of Africa's leading research universities.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "postgraduate"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Computer Science ን ለማጥናት entrance exam አለ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "entrance exam"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! ለ undergraduate programs ብሔራዊ ፈተና (EUEE) ማለፍ ያስፈልጋል። For postgraduate, you may need to take a departmental entrance exam and submit your undergraduate transcripts. ዝርዝሩን ከዩኒቨርሲቲ ድረ ገጽ ያረጋግጡ።",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ለ undergraduate"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ፈተናው ምን ምን subjects ያካትታል? Syllabus ን ማግኘት ይቻላል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "subjects"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.2,
+        "semantic_consistency": 0.81,
+        "switch_point_naturalness": 4.1,
+        "fluency_rating": 4.0,
+        "annotator_agreement_kappa": 0.71
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 17,
+      "topic": "sports",
+      "code_switch_frequency": "medium",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Do you follow the FIFA World Cup? ኢትዮጵያ ማሳተፍ ትችላለች?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ኢትዮጵያ"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Yes, the World Cup is football's biggest stage! ኢትዮጵያ World Cup ለመብቃት ብዙ ጥረት ተደርጓል፣ ነገር ግን qualification remains challenging. The Ethiopian Premier League is growing, which bodes well for future talent.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ኢትዮጵያ World Cup"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Ethiopian football ን ለማጠናከር ምን ያስፈልጋል? Infrastructure ወይስ training?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Infrastructure"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Both are critical. ጥሩ training facilities እና grassroots programs ያስፈልጋሉ። Investment in youth academies, better coaching, and international exposure for Ethiopian players can make a big difference.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ጥሩ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Agreed! ሌሎች አፍሪካ ሀገሮች ምን ያህል ያሻሻሉ? Nigeria, Ghana ን ተመልከቱ.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ሌሎች"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.3,
+        "semantic_consistency": 0.83,
+        "switch_point_naturalness": 4.1,
+        "fluency_rating": 4.0,
+        "annotator_agreement_kappa": 0.73
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 18,
+      "topic": "culture",
+      "code_switch_frequency": "low",
+      "language_dominance": "english_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Can you describe traditional Ethiopian food? ምን ምን ዓይነቶች አሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Ethiopian cuisine is diverse and communal. Injera, a sourdough flatbread, is the staple. It is served with various stews called wot — both meat-based and vegetarian. ምግቡ አብሮ መብላቱ ማኅበራዊ ትስስርን ያጠናክራል.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምግቡ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Vegetarian options ብዙ ናቸው? ለ fasting ምን ዓይነቶች ተዘጋጅቶ አለ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ለ fasting"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Ethiopian Orthodox Christians fast frequently, so vegan cuisine is very well developed. Dishes like shiro, misir wot, and fosolia are popular during fasting periods. ጾሙ ምግቡን ፈጠራዊ ያደርገዋል!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ጾሙ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Wonderful! I should try this cuisine. ምን ያህል expensive ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ምን"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.87,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.77
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 19,
+      "topic": "politics",
+      "code_switch_frequency": "medium",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "African Union ምን ሚና ይጫወታል? Its role in regional peace?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "African Union"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "The African Union promotes peace, security, and development across the continent. ሰላምን ለማስፈን peacekeeping missions ይልካል። It also advocates for economic integration through frameworks like the African Continental Free Trade Area.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ሰላምን"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Ethiopia AU ን ያስተናግዳል? ዋና ቢሮው Addis Ababa ውስጥ ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ዋና ቢሮው"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! The African Union headquarters is located in Addis Ababa, Ethiopia. ይህ ኢትዮጵያ ለአፍሪካ ዲፕሎማሲ ያላትን ታሪካዊ ሚና ያሳያል። The AU Commission Building is one of the continent's iconic diplomatic landmarks.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "The African Union"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Great insight! ወጣቶች AU ውስጥ ሥራ ማግኘት ይችላሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ወጣቶች"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.3,
+        "semantic_consistency": 0.84,
+        "switch_point_naturalness": 4.2,
+        "fluency_rating": 4.1,
+        "annotator_agreement_kappa": 0.74
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 20,
+      "topic": "health",
+      "code_switch_frequency": "low",
+      "language_dominance": "amharic_dominant",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "አመጋገብ ላይ ትኩረት ስሰጥ ምን ምን ማስወገድ አለብኝ? Processed food ን?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Processed food"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "አዎ, highly processed foods and excessive sugar are important to limit. ብዙ ጨው፣ ዘይት እና artificial additives ያላቸው ምግቦችን ይቀንሱ። Instead, focus on whole grains, fresh vegetables, and lean proteins.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "ብዙ ጨው"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ለ diabetes ያለ ሰው ምን ዓይነት diet ይጠቅማል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "diet"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Diabetics benefit from a low-glycemic diet. ብዙ ጥሬ አትክልቶችን፣ ሙሉ ዳቦ እና ሙሉ ጤፍ ይበሉ። Reduce white rice, white bread, and sugary drinks significantly. ዶክተርዎን ሁልጊዜ ያማክሩ!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ብዙ ጥሬ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጠቃሚ ምክር ነው። Regular check-ups ምን ያህል ጊዜ ያስፈልጋሉ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Regular check-ups"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.89,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.78
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 21,
+      "topic": "technology",
+      "code_switch_frequency": "medium",
+      "language_dominance": "balanced",
+      "split": "train",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Social media ን ዘወትር ስጠቀም ጊዜ ያሳልፋል። Productivity ን እንዴት ላሻሽለው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Social media"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Screen time ን ለመቀነስ app timers ይጠቀሙ — phones have built-in features for this. ለሥራ ሰዓት social media ን ዝጉ። 'Digital detox' periods, even just a few hours per day, can significantly boost focus.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ለሥራ ሰዓት"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "App timers ስጠቀም ጥቅሙ ምን ያህል ነው? ልምዴን ለመቀየር ሊረዳ ይችላል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ጥቅሙ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Research shows that awareness of usage patterns is the first step to behavioral change. ያለ ምንም ውሳኔ ስልኩን ስጠቀሙ timer ያስጠነቅቃቸዋል። Over time, this creates a habit of intentional, purposeful phone use.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ያለ ምንም"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ይሞከረዋለሁ! ሌሎች digital wellness tips አለህ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "digital wellness"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "switch_point_naturalness": 4.2,
+        "fluency_rating": 4.2,
+        "annotator_agreement_kappa": 0.75
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 22,
+      "topic": "daily_life",
+      "code_switch_frequency": "low",
+      "language_dominance": "amharic_dominant",
+      "split": "validation",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ትናንት ዝናብ ሳይዝናብ ፀሐይ ሞቀ። Weather forecast ን እንዴት አምናለሁ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Weather forecast"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Weather forecasting has improved a lot thanks to satellite data and AI models. ነገር ግን 100% አስተማማኝ አይሆንም። Check multiple sources like BBC Weather, Weather.com, or local Ethiopian Meteorology for best results.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ነገር ግን"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Rainy season ን ቀድሞ ማወቅ ለ farming ይረዳል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ቀድሞ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Absolutely! Seasonal forecasts help farmers plan planting and harvesting times. ኢትዮጵያ ዊቲ 80% ያህሉ ሕዝብ ግብርናን ስለሚሠራ ትክክለኛ forecast ሕልውናቸውን ይወስናል.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ኢትዮጵያ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ትክክል ነው። Technology ን ለ agriculture ስንጠቀም ምርቱ ምን ያህል ይሻሻላል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Technology ን"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.2,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 23,
+      "topic": "education",
+      "code_switch_frequency": "high",
+      "language_dominance": "english_dominant",
+      "split": "validation",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Online learning platforms like Coursera and edX — ለ Ethiopians accessible ናቸው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ለ Ethiopians"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Yes, they are accessible with internet access! ብዙ courses free audit ን ያቀርባሉ, though certificates cost money. Financial aid is available — Coursera ላይ 'financial aid' ን ይጠይቁ for free certificates.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ብዙ courses"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Internet speed ዝቅ ካለ video lectures ለማየት ይቸገርና። Offline options አሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ዝቅ ካለ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Many platforms allow downloading content for offline viewing. The Coursera and edX apps support offline playback. አማርኛ subtitle ን ለ English courses መጠቀምም ይቻላል — helping bridge language barriers.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "አማርኛ subtitle"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Amazing! ለ data science course ምን ይመከራሉ? Python ወይስ R?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ለ data science"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.86,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 24,
+      "topic": "sports",
+      "code_switch_frequency": "high",
+      "language_dominance": "amharic_dominant",
+      "split": "validation",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ልጆቼ sports ውስጥ ምን ዓይነት benefit ያገኛሉ? Team sport ይሻላቸዋል ወይስ individual?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "sports"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ሁለቱም ልዩ ጥቅሞች አሏቸው! Team sports build communication, teamwork, and social skills. ግለሰባዊ sport ደግሞ self-discipline እና focus ያዳብራሉ። ልጆቻቸው ፍላጎት ያሳዩበትን ይምረጡ!",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Team sports"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ኢትዮጵያ ውስጥ ወጣቶች ለ Olympic training ዕድል አላቸው?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Olympic training"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! Ethiopia has a strong Olympic tradition especially in track and field. ብሔራዊ ፌዴሬሽኖች talented youth ን ይፈልጋሉ። The Ethiopian Athletics Federation runs regional competitions to identify and develop young talent.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "Ethiopia has"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጥሩ! ልጄን registration ለማድረግ ከየት ልጀምር?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "registration"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.87,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.77
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 25,
+      "topic": "culture",
+      "code_switch_frequency": "medium",
+      "language_dominance": "balanced",
+      "split": "validation",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Amharic literature ምን ዓይነት famous writers አሉት?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "famous writers"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Ethiopian literature is rich! Haddis Alemayehu, who wrote Fiqir Eske Meqabir — often called the 'Romeo and Juliet' of Ethiopia — is a giant. ሌሎችም ስሎ ኤሉፍ ሄልበርጅ ሌሎች ጸሐፊዎች አሉ. Tsegaye Gebre-Medhin was also a legendary poet and playwright.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ሌሎችም"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Fiqir Eske Meqabir ን አንብቤዋለሁ! ይህን book recommend ማድረግ ይቻላሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "recommend"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Absolutely — it's a masterpiece of Amharic fiction! It explores love, loss, and social class in early 20th-century Ethiopia. ይህን ልብ ወለድ ለማዳመጥ YouTube ላይ audio version ን ማግኘት ይቻላል.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ይህን ልብ ወለድ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ያሳዝናሉ ዘመናዊ Amharic novels ን ለ international audience translate ማድረግ ለምን ቀስ ሆነ?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Amharic novels"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.4,
+        "semantic_consistency": 0.85,
+        "switch_point_naturalness": 4.2,
+        "fluency_rating": 4.2,
+        "annotator_agreement_kappa": 0.75
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 26,
+      "topic": "technology",
+      "code_switch_frequency": "high",
+      "language_dominance": "english_dominant",
+      "split": "test",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "What is the difference between AI and machine learning? ሁለቱ ምን ያህል ተዛምደዋል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ሁለቱ"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "AI is the broader field of creating machines that exhibit intelligent behavior. Machine learning ደግሞ የ AI ንዑስ ዘርፍ ሲሆን machines learn from data ያደርጋቸዋል without being explicitly programmed. Think of AI as the goal, and ML as one path to get there.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "Machine learning ደግሞ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Deep learning ን ስሰማ, neural networks ን ያካትታል? ምን ዓይነት problems ይፈታሉ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "neural networks"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Deep learning uses multi-layer neural networks inspired by the human brain. ምስሎችን ማወቅ፣ ቋንቋ መረዳት፣ እና ሙዚቃ ማዘጋጀት ይቻልበታሉ። It excels at tasks like image classification, speech recognition, and language translation.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ምስሎችን"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Amharic language ን ለ AI model training data አለ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "training data"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.87,
+        "switch_point_naturalness": 4.3,
+        "fluency_rating": 4.2,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 27,
+      "topic": "health",
+      "code_switch_frequency": "medium",
+      "language_dominance": "balanced",
+      "split": "test",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Mental health ን ለ ኢትዮጵያ ሰዎች ምን ያህል አስፈላጊ ነው? Stigma አለ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Mental health"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Mental health is critically important globally, including in Ethiopia. አዎ, stigma ብዙ ቦታ ይገኛል — seeking help is sometimes seen as weakness. But awareness is growing, especially among urban youth. ስለ ስሜቶቻቸው መናገር ጥሩ ድፍረት ነው!",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "አዎ, stigma"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Therapy ን ለ ኢትዮጵያ ሰዎች ማግኘት ቀላል ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ኢትዮጵያ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Access remains a challenge, especially in rural areas. ከተማ ውስጥ psychologists and counselors ማግኘት ቀላል ነው፣ ነገር ግን ዋጋቸው ብዙ ጊዜ ከፍ ይላል። Online therapy platforms are starting to offer Amharic-speaking counselors, which helps.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ከተማ ውስጥ"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጥሩ ዜና ነው። Self-care practices ምን ምን ናቸው ለ mental health?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Self-care"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.88,
+        "switch_point_naturalness": 4.5,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.78
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 28,
+      "topic": "politics",
+      "code_switch_frequency": "high",
+      "language_dominance": "amharic_dominant",
+      "split": "test",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "ሰላምና ደህንነት ለ ኢትዮጵያ ወሳኝ ናቸው። Conflict resolution ን እንዴት ማሳካት ይቻላል?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Conflict resolution"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "ሰላም ለሁሉም ሕዝቦች ፍላጎት ነው። Conflict resolution requires dialogue, mutual understanding, and compromise. የሽምግልና ሥርዓት — traditional mediation known as 'shimagile' — is deeply rooted in Ethiopian culture and highly effective.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "Conflict resolution"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Shimagile ሥርዓቱ ዘመናዊ conflicts ን ሊፈታ ይችላል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "Shimagile"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "አዎ! Traditional mediation systems, when combined with modern legal frameworks, can be very powerful. ባህላዊ ሽምግልና community trust ን ይጠቀማል which legal courts often lack. Hybrid approaches show great promise in Ethiopia and across Africa.",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[AMH-ENG-AMH-ENG]",
+          "switch_point_token": "Traditional mediation"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "ጥሩ perspective! International community ምን ሚና ይጫወታል ሰላም ለማምጣት?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "International community"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.3,
+        "semantic_consistency": 0.83,
+        "switch_point_naturalness": 4.1,
+        "fluency_rating": 4.1,
+        "annotator_agreement_kappa": 0.73
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 29,
+      "topic": "sports",
+      "code_switch_frequency": "low",
+      "language_dominance": "english_dominant",
+      "split": "test",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "Haile Gebrselassie is a legend. What made him so exceptional as an athlete? ምስጢሩ ምንድን ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ምስጢሩ"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Haile combined natural talent with extraordinary work ethic and mental strength. ከልጅነቱ ጀምሮ ሩጦ አድጓል — he ran 10km to and from school daily! His training discipline and ability to pace himself perfectly in races set him apart from other great runners.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ከልጅነቱ"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "ሌሎች Ethiopian runners ስናይ, Kenenisa Bekele ምን ስኬት አለው?",
+          "language_tags": [
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[AMH-ENG-AMH]",
+          "switch_point_token": "Kenenisa Bekele"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Kenenisa Bekele is arguably the greatest distance runner of all time. He holds world records in the 5000m and 10000m. ሶስት Olympic ወርቅ ሜዳልያ አሸንፏል and dominated cross-country running for over a decade. His consistency is unparalleled.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ሶስት Olympic"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "Inspiring! ለ future generations of Ethiopian athletes ምን message ይኖራቸዋል?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ለ future"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.5,
+        "semantic_consistency": 0.86,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.3,
+        "annotator_agreement_kappa": 0.76
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    },
+    {
+      "dialogue_id": 30,
+      "topic": "daily_life",
+      "code_switch_frequency": "medium",
+      "language_dominance": "english_dominant",
+      "split": "test",
+      "turns": [
+        {
+          "turn_id": 1,
+          "speaker": "User",
+          "utterance": "How do you handle stress effectively? ጭንቀትን ለመቋቋም ምን ዘዴ አለ?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ጭንቀትን"
+        },
+        {
+          "turn_id": 2,
+          "speaker": "Assistant",
+          "utterance": "Effective stress management combines physical and mental techniques. Deep breathing exercises, ቀን ቀን አጠር ያለ የእረፍት ጊዜ፣ and regular physical activity are all proven strategies. Talking to someone you trust also helps enormously.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ቀን ቀን"
+        },
+        {
+          "turn_id": 3,
+          "speaker": "User",
+          "utterance": "Mindfulness ወይስ meditation — ለ ኢትዮጵያዊ ሰዎች ተስማሚ ነው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH]",
+          "switch_point_token": "ለ ኢትዮጵያዊ"
+        },
+        {
+          "turn_id": 4,
+          "speaker": "Assistant",
+          "utterance": "Mindfulness is universal and can be practiced by anyone. ጸሎት፣ ዘፈን፣ ወይም ጸጥ ብሎ ማሰብ — these are all forms of mindfulness deeply rooted in Ethiopian tradition. Modern apps like Headspace and Calm also offer guided sessions for beginners.",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]"
+          ],
+          "switch_type": "[ENG-AMH-ENG]",
+          "switch_point_token": "ጸሎት"
+        },
+        {
+          "turn_id": 5,
+          "speaker": "User",
+          "utterance": "That is comforting! ሌሎች coping strategies ምን ምን ናቸው?",
+          "language_tags": [
+            "[ENG]",
+            "[AMH]",
+            "[ENG]",
+            "[AMH]"
+          ],
+          "switch_type": "[ENG-AMH-ENG-AMH]",
+          "switch_point_token": "ሌሎች"
+        }
+      ],
+      "annotations": {
+        "coherence_score": 4.6,
+        "semantic_consistency": 0.88,
+        "switch_point_naturalness": 4.4,
+        "fluency_rating": 4.4,
+        "annotator_agreement_kappa": 0.77
+      },
+      "source": "gold",
+      "source_dataset": "original",
+      "generation_method": "hand_crafted"
+    }
+  ],
+  "version_history": {
+    "v1.0": "Initial pilot dataset (10 dialogues).",
+    "v2.0": "Expanded gold set (30 dialogues, 7 topics)."
+  },
+  "public_dataset_references": [],
+  "generation_methods": {
+    "hand_crafted": "All dialogues written by expert annotators (gold set)."
+  }
+}

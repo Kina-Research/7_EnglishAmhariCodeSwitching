@@ -1,0 +1,47 @@
+{
+  "GPT-4": {
+    "bleu": 0.3248,
+    "rouge_l": 0.5033,
+    "bert_f1": 0.7515,
+    "switch_accuracy_f1": 0.2,
+    "coherence": 4.6,
+    "fluency": 4.46,
+    "perplexity": 20.0533
+  },
+  "LLaMA-2-7B": {
+    "bleu": 0.4389,
+    "rouge_l": 0.4994,
+    "bert_f1": 0.7794,
+    "switch_accuracy_f1": 0.0,
+    "coherence": 2.78,
+    "fluency": 2.44,
+    "perplexity": 46.352
+  },
+  "BLOOM-7B": {
+    "bleu": 0.3799,
+    "rouge_l": 0.4717,
+    "bert_f1": 0.7493,
+    "switch_accuracy_f1": 0.0,
+    "coherence": 3.08,
+    "fluency": 2.92,
+    "perplexity": 56.7047
+  },
+  "mT5-Large": {
+    "bleu": 0.4127,
+    "rouge_l": 0.4902,
+    "bert_f1": 0.7488,
+    "switch_accuracy_f1": 0.2,
+    "coherence": 3.66,
+    "fluency": 3.46,
+    "perplexity": 38.768
+  },
+  "mBERT-fine-tuned": {
+    "bleu": 0.3876,
+    "rouge_l": 0.5117,
+    "bert_f1": 0.7547,
+    "switch_accuracy_f1": 0.2,
+    "coherence": 4.16,
+    "fluency": 3.96,
+    "perplexity": 31.6247
+  }
+}
