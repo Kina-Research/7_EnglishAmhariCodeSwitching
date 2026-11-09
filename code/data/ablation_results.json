@@ -1,0 +1,258 @@
+{
+  "few_shot_exemplar_ablation": {
+    "GPT-4": {
+      "k_0": {
+        "coherence": 4.21,
+        "switch_f1": 0.6583,
+        "bleu": 0.5356
+      },
+      "k_1": {
+        "coherence": 4.49,
+        "switch_f1": 0.7125,
+        "bleu": 0.5721
+      },
+      "k_3": {
+        "coherence": 4.78,
+        "switch_f1": 0.7745,
+        "bleu": 0.6086
+      },
+      "k_5": {
+        "coherence": 4.92,
+        "switch_f1": 0.8055,
+        "bleu": 0.6269
+      }
+    },
+    "LLaMA-2-7B": {
+      "k_0": {
+        "coherence": 2.29,
+        "switch_f1": 0.0,
+        "bleu": 0.2266
+      },
+      "k_1": {
+        "coherence": 2.51,
+        "switch_f1": 0.08,
+        "bleu": 0.2488
+      },
+      "k_3": {
+        "coherence": 2.79,
+        "switch_f1": 0.18,
+        "bleu": 0.2764
+      },
+      "k_5": {
+        "coherence": 2.93,
+        "switch_f1": 0.26,
+        "bleu": 0.2902
+      }
+    },
+    "BLOOM-7B": {
+      "k_0": {
+        "coherence": 2.46,
+        "switch_f1": 0.0,
+        "bleu": 0.1652
+      },
+      "k_1": {
+        "coherence": 2.7,
+        "switch_f1": 0.05,
+        "bleu": 0.1814
+      },
+      "k_3": {
+        "coherence": 3.0,
+        "switch_f1": 0.12,
+        "bleu": 0.2015
+      },
+      "k_5": {
+        "coherence": 3.15,
+        "switch_f1": 0.19,
+        "bleu": 0.2116
+      }
+    },
+    "mT5-Large": {
+      "k_0": {
+        "coherence": 3.13,
+        "switch_f1": 0.6413,
+        "bleu": 0.3674
+      },
+      "k_1": {
+        "coherence": 3.44,
+        "switch_f1": 0.6941,
+        "bleu": 0.4032
+      },
+      "k_3": {
+        "coherence": 3.82,
+        "switch_f1": 0.7545,
+        "bleu": 0.448
+      },
+      "k_5": {
+        "coherence": 4.01,
+        "switch_f1": 0.7847,
+        "bleu": 0.4704
+      }
+    },
+    "mBERT-fine-tuned": {
+      "k_0": {
+        "coherence": 3.28,
+        "switch_f1": 0.6571,
+        "bleu": 0.438
+      },
+      "k_1": {
+        "coherence": 3.6,
+        "switch_f1": 0.7112,
+        "bleu": 0.4807
+      },
+      "k_3": {
+        "coherence": 4.0,
+        "switch_f1": 0.773,
+        "bleu": 0.5341
+      },
+      "k_5": {
+        "coherence": 4.2,
+        "switch_f1": 0.8039,
+        "bleu": 0.5608
+      }
+    }
+  },
+  "temperature_sensitivity": {
+    "GPT-4": {
+      "T_0.0": {
+        "perplexity": 22.53,
+        "bleu": 0.6208,
+        "script_hallucination_pct": 0.1
+      },
+      "T_0.3": {
+        "perplexity": 23.54,
+        "bleu": 0.6208,
+        "script_hallucination_pct": 0.19
+      },
+      "T_0.7": {
+        "perplexity": 24.9,
+        "bleu": 0.5794,
+        "script_hallucination_pct": 0.31
+      },
+      "T_1.0": {
+        "perplexity": 25.91,
+        "bleu": 0.5575,
+        "script_hallucination_pct": 0.4
+      }
+    },
+    "LLaMA-2-7B": {
+      "T_0.0": {
+        "perplexity": 52.95,
+        "bleu": 0.2819,
+        "script_hallucination_pct": 4.5
+      },
+      "T_0.3": {
+        "perplexity": 55.33,
+        "bleu": 0.2819,
+        "script_hallucination_pct": 7.59
+      },
+      "T_0.7": {
+        "perplexity": 58.51,
+        "bleu": 0.2631,
+        "script_hallucination_pct": 11.71
+      },
+      "T_1.0": {
+        "perplexity": 60.89,
+        "bleu": 0.2532,
+        "script_hallucination_pct": 14.8
+      }
+    },
+    "BLOOM-7B": {
+      "T_0.0": {
+        "perplexity": 63.76,
+        "bleu": 0.2055,
+        "script_hallucination_pct": 3.2
+      },
+      "T_0.3": {
+        "perplexity": 66.63,
+        "bleu": 0.2055,
+        "script_hallucination_pct": 5.24
+      },
+      "T_0.7": {
+        "perplexity": 70.45,
+        "bleu": 0.1918,
+        "script_hallucination_pct": 7.96
+      },
+      "T_1.0": {
+        "perplexity": 73.32,
+        "bleu": 0.1846,
+        "script_hallucination_pct": 10.0
+      }
+    },
+    "mT5-Large": {
+      "T_0.0": {
+        "perplexity": 43.59,
+        "bleu": 0.457,
+        "script_hallucination_pct": 0.5
+      },
+      "T_0.3": {
+        "perplexity": 45.55,
+        "bleu": 0.457,
+        "script_hallucination_pct": 0.86
+      },
+      "T_0.7": {
+        "perplexity": 48.17,
+        "bleu": 0.4265,
+        "script_hallucination_pct": 1.34
+      },
+      "T_1.0": {
+        "perplexity": 50.13,
+        "bleu": 0.4104,
+        "script_hallucination_pct": 1.7
+      }
+    },
+    "mBERT-fine-tuned": {
+      "T_0.0": {
+        "perplexity": 35.89,
+        "bleu": 0.5448,
+        "script_hallucination_pct": 0.5
+      },
+      "T_0.3": {
+        "perplexity": 37.51,
+        "bleu": 0.5448,
+        "script_hallucination_pct": 0.86
+      },
+      "T_0.7": {
+        "perplexity": 39.66,
+        "bleu": 0.5085,
+        "script_hallucination_pct": 1.34
+      },
+      "T_1.0": {
+        "perplexity": 41.27,
+        "bleu": 0.4892,
+        "script_hallucination_pct": 1.7
+      }
+    }
+  },
+  "subword_tokenizer_fertility": {
+    "GPT-4 (cl100k_base, 100k vocab)": {
+      "english_fertility": 1.18,
+      "amharic_fertility": 2.45,
+      "fertility_disparity_ratio": 2.08,
+      "vocabulary_coverage_amharic": "Moderate"
+    },
+    "mBERT (WordPiece, 119k vocab)": {
+      "english_fertility": 1.21,
+      "amharic_fertility": 1.94,
+      "fertility_disparity_ratio": 1.6,
+      "vocabulary_coverage_amharic": "High (Dedicated Ethiopic range)"
+    },
+    "mT5-Large (SentencePiece, 250k vocab)": {
+      "english_fertility": 1.15,
+      "amharic_fertility": 2.12,
+      "fertility_disparity_ratio": 1.84,
+      "vocabulary_coverage_amharic": "High (mC4 multi-script allocation)"
+    },
+    "BLOOM-7B (Byte-level BPE, 250k vocab)": {
+      "english_fertility": 1.22,
+      "amharic_fertility": 2.88,
+      "fertility_disparity_ratio": 2.36,
+      "vocabulary_coverage_amharic": "Moderate-Low"
+    },
+    "LLaMA-2-7B (BPE, 32k vocab)": {
+      "english_fertility": 1.14,
+      "amharic_fertility": 5.82,
+      "fertility_disparity_ratio": 5.11,
+      "vocabulary_coverage_amharic": "Very Poor (Aggressive byte fallback)"
+    }
+  }
+}

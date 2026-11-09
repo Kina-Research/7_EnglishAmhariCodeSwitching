@@ -23,6 +23,65 @@ EthioSwitch-Bench addresses this gap by providing:
 
 ---
 
+## 📂 Repository Architecture
+
+```
+codeswichexpermt/
+├── WileyComputationaIntelligence/
+│   ├── Manuscript_Revised_Wiley_CI.docx   # Fully revised research manuscript (Wiley CI format)
+│   ├── ManuscriptR.docx                   # Publication-ready manuscript
+│   └── ManuscriptR_original.docx          # Original submission backup
+├── code/
+│   ├── 00_dataset_expander.py             # Generates v3.0 benchmark from gold & adapted corpora
+│   ├── 01_dataset_builder.py              # Dataset loader, schema validator, corpus stats
+│   ├── 02_inference_runner.py             # Model inference engine (GPT-4, mBERT, mT5, LLaMA, BLOOM)
+│   ├── 03_auto_evaluator.py               # Automatic metrics (BLEU, ROUGE-L, BERTScore, Switch F1, PPL)
+│   ├── 04_human_eval_aggregator.py        # Human evaluation aggregation & weighted Cohen's Kappa
+│   ├── 05_statistical_analysis.py         # Rigorous hypothesis testing (Welch's t, Paired t, Spearman rho)
+│   ├── 06_visualizer.py                   # 300 DPI publication plots (PNG & vector PDF)
+│   ├── 07_report_generator.py             # Markdown and LaTeX research report generator
+│   ├── 08_ablation_and_sensitivity.py     # Few-shot scaling, temperature, & tokenizer fertility ablation
+│   ├── pipeline.py                        # Master pipeline orchestrator (Steps 01-08)
+│   ├── requirements.txt                   # Pinned Python package dependencies
+│   ├── data/
+│   │   ├── ethioswitch_bench_v2.json      # Gold hand-crafted benchmark (30 dialogues)
+│   │   ├── ethioswitch_bench_v3.json      # Full benchmark corpus (2,000 dialogues)
+│   │   ├── model_outputs.json             # Generated responses across 5 models
+│   │   ├── auto_eval_results.json         # Automated evaluation metrics per dialogue turn
+│   │   ├── human_eval_results.json        # Aggregated human ratings and agreement scores
+│   │   ├── statistical_results.json       # Formal hypothesis testing outcomes & 95% CIs
+│   │   ├── ablation_results.json          # Empirical ablation & sensitivity test outcomes
+│   │   ├── research_summary.md            # Comprehensive research report with LaTeX tables
+│   │   └── figures/                       # Publication-grade figures (PNG & PDF)
+│   └── utils/
+│       ├── data_models.py                 # Dataclasses for dialogues, turns, outputs, results
+│       ├── metrics.py                     # Metric calculation functions (BLEU, ROUGE, Kappa)
+│       └── text_utils.py                  # Unicode script detection & switch-point analysis
+├── docs/
+│   └── DATACARD.md                        # Formal HuggingFace-standard dataset card
+├── examples/
+│   └── quickstart.py                      # Quickstart script for loading & inspecting benchmark
+├── latex/
+│   ├── main.tex                           # Exact LaTeX master manuscript (XeLaTeX/pdfLaTeX compatible)
+│   ├── main.pdf                           # Compiled publication-ready 20-page research manuscript
+│   ├── references.bib                     # Complete BibTeX database (41 peer-reviewed citations)
+│   ├── README.md                          # LaTeX compilation instructions & font requirements
+│   └── figures/                           # High-resolution (300 DPI) and vector PDF figures (fig0-fig7)
+├── tests/
+│   ├── test_dataset.py                    # Dataset integrity & schema validation tests
+│   ├── test_metrics.py                    # Metric calculation unit tests
+│   ├── test_statistics.py                 # Statistical analysis & hypothesis testing tests
+│   ├── test_ablation.py                   # Ablation and sensitivity analysis tests
+│   └── test_pipeline.py                   # Pipeline artifact verification tests
+├── validate_and_clean.py                  # Dataset schema cleaner and integrity auditor
+├── build_complete_manuscript.py           # Programmatic builder for publication DOCX
+├── CITATION.cff                           # Formal academic citation metadata
+├── LICENSE                                # MIT Code License & CC BY 4.0 Dataset terms
+└── README.md                              # Main documentation (this file)
+```
+
+---
+
 ## 🚀 Quickstart & Installation
 
 ### 1. Environment Setup
@@ -116,7 +175,25 @@ python code/pipeline.py
 
 ---
 
+## 📜 Citation & Attribution
+
+If you utilize EthioSwitch-Bench or build upon this research, please cite our manuscript:
+
+```bibtex
+@article{tsega2026evaluating,
+  title={Evaluating Conversational Intelligence in Large Language Models Using English--Amharic Code-Switching},
+  author={Tsega, Kindie Alebachew and Sharma, Durga Prasad and Gondere, Mesay Samuel and Yimer, Mohammed Abebe},
+  journal={Computational Intelligence},
+  year={2026},
+  publisher={Wiley},
+  note={Under review}
+}
+```
+
+---
 
 ## ⚖️ License & Ethical Data Statement
 
+- **Dataset**: Released under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+- **Codebase**: Released under the [MIT License](LICENSE).
 - **Ethics**: All dialogues have been audited for safety, privacy, and absence of hate speech. Native human evaluators were fairly compensated above local institutional guidelines.

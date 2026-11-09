@@ -63,3 +63,7 @@ htmlcov/
 
 # --- OS-specific ---
 desktop.ini
+
+# --- Local DOCX Working Directory ---
+WileyComputationaIntelligence/
+
