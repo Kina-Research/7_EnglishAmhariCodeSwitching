@@ -88,3 +88,4 @@ def test_v2_gold_benchmark(dataset_v2):
         assert len(d.get("turns", [])) == 5, "Expected 5 turns per gold dialogue"
         for t in d["turns"]:
             assert t["utterance"].strip() != "", "Empty utterance found"
+

@@ -78,8 +78,8 @@ codeswichexpermt/
 ### 1. Environment Setup
 ```bash
 # Clone the repository
-git clone https://github.com/KindieTsega/ethioswitch-bench.git
-cd ethioswitch-bench
+git clone https://github.com/Kina-Research/7_EnglishAmhariCodeSwitching.git
+cd 7_EnglishAmhariCodeSwitching
 
 # Install pinned dependencies
 pip install -r code/requirements.txt

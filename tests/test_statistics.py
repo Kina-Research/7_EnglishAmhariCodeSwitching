@@ -48,3 +48,4 @@ def test_spearman_correlation():
     assert res["statistic"] == -1.0
     assert res["p_value"] < 0.001
     assert res["ci_95"][1] < -0.90
+

@@ -69,3 +69,4 @@ def test_script_detection():
     assert has_english("Hello") is True
     assert has_english("ሰላም") is False
     assert detect_switch_type("ሰላም! How are you?") in ["[AMH-ENG]", "[ENG-AMH]"]
+

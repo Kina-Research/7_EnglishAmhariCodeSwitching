@@ -55,3 +55,4 @@ def test_statistical_results_schema():
         assert "verdict" in h
         assert "statistic" in h
         assert "p_value" in h
+
